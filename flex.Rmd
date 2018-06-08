@@ -16,7 +16,18 @@ Column {data-width=650}
 ### Chart A
 
 ```{r}
-plot(1:5)
+library(tidyquant)
+
+
+AAPL <-
+  tq_get("AAPL") 
+AAPL %>%
+  ggplot(aes(x = date, y = close)) +
+  geom_line() +
+  labs(title = "AAPL: Daily Closing Price", y = "Closing Price", x = "") +
+  theme_bw()
+
+
 ```
 
 Column {data-width=350}
