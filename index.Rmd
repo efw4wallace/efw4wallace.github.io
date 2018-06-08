@@ -1,0 +1,12 @@
+---
+title: "Some of My Work"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Equity Research
+
+- [flex dashboard example](flex.html)
