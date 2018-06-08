@@ -5,6 +5,21 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyquant)
+
+
+AAPL <-
+  tq_get("AAPL") 
+AAPL %>%
+  ggplot(aes(x = date, y = close)) +
+  geom_line() +
+  labs(title = "AAPL: Daily Closing Price", y = "Closing Price", x = "") +
+  theme_bw()
+
+
+
+
 ```
 
 ## Equity Research
