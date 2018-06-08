@@ -25,3 +25,7 @@ AAPL %>%
 ## Equity Research
 
 - [flex dashboard example](flex.html)
+
+---
+### Chart 1
+
