@@ -86,3 +86,17 @@ AAPL1 %>%
 
 ```
 
+### Another One
+
+```{r}
+
+AAPL2 %>%
+  ggplot(aes(x = date, y = value)) +
+  facet_wrap(~category + sub.section, scales = "free" ) +
+  geom_line() +
+  labs(title = "AAPL: Profitability Ratios",
+       y = "Free Y Scale",
+       x = "Date by Year") +
+  theme_tq()
+
+```
