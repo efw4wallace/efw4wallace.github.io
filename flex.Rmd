@@ -13,7 +13,7 @@ library(flexdashboard)
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### AAPL: Stock Daily Closing Price
 
 ```{r}
 library(tidyquant)
@@ -33,15 +33,56 @@ AAPL %>%
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### AAPL: Volume Chart
 
 ```{r}
-
+AAPL %>%
+  ggplot(aes(x = date, y = volume)) +
+  geom_segment(aes(xend = date, yend = 0, color = volume)) +
+  geom_smooth(method = "loess", se = FALSE) +
+  labs(title = "AAPL: Volume Chart",
+       subtitle = "Charting Daily Volume",
+       y = "Volume", x = "") +
+  theme_tq() +
+  theme(legend.position = "none")
 ```
 
-### Chart C
+### AAPL: Key Financial Ratios
 
 ```{r}
+AAPLFinancial <-
+  tq_get("AAPL", "key.ratios")
+
+AAPL1 <- 
+  AAPLFinancial$data[[1]]
+
+AAPL2 <- 
+  AAPLFinancial$data[[2]]
+
+AAPL3 <-
+  AAPLFinancial$data[[3]]
+
+AAPL4 <-
+  AAPLFinancial$data[[4]]
+
+AAPL5 <-
+  AAPLFinancial$data[[5]]
+
+AAPL6 <-
+  AAPLFinancial$data[[6]]
+
+AAPL7 <-
+  AAPLFinancial$data[[7]]
+
+AAPL1 %>%
+  ggplot(aes(x = date, y = value)) +
+  facet_wrap(~category, nrow = 4, scales = "free") +
+  geom_line() +
+  labs(title = "AAPL: Financial Ratios 2008 to 2018",
+       subtitle = "Enjoy",
+       y = "Free Y Scale",
+       x = "Date by Year") +
+  theme_tq()
 
 ```
 
