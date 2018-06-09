@@ -40,7 +40,7 @@ Row {.tabset .tabset-fade}
 
 ### AAPL: Volume Chart
 
-```{r, fig.width=10, fig.height=7}
+```{r}
 AAPL <-
   tq_get("AAPL")
 AAPL %>%
@@ -89,7 +89,7 @@ AAPL1 %>%
        subtitle = "Enjoy",
        y = "Free Y Scale",
        x = "Date by Year") +
-  theme_tq()
+  theme_tq(base_size = 4, base_family = "")
 
 
 ```
@@ -105,7 +105,7 @@ AAPL2 %>%
   labs(title = "AAPL: Profitability Ratios",
        y = "Free Y Scale",
        x = "Date by Year") +
-  theme_tq()
+  theme_tq(base_size = 4)
 
 ```
 
@@ -114,12 +114,12 @@ AAPL2 %>%
 ```{r}
 AAPL3 %>%
   ggplot(aes(x = date, y = value)) +
-  facet_wrap(~category + sub.section, ncol = 8, scales = "free" ) +
+  facet_wrap(~category + sub.section, ncol = 6, scales = "free" ) +
   geom_line() +
   labs(title = "NOC Growth Ratios",
        y = "Free Scale Y",
        x = "Date by Year") +
-  theme_tq()
+  theme_tq(base_size = 5)
 ```
 
 ### AAPL: Cash Flow Ratios
@@ -134,7 +134,7 @@ AAPL4 %>%
        subtile = "Data From Yahoo Finance",
        y = "Free Scale Y",
        x = "Date by Year") +
-  theme_tq()
+  theme_tq(base_size = 8)
 ```
 
 ### AAPL: Financial Health Ratios
@@ -142,12 +142,12 @@ AAPL4 %>%
 ```{r}
 AAPL5 %>%
   ggplot(aes(x = date, y = value)) +
-  facet_wrap(~category + sub.section, ncol = 8, scales = "free" ) +
+  facet_wrap(~category + sub.section, nrow = 5, scales = "free" ) +
   geom_line() +
   labs(title = "AAPL:Financial Health Ratios",
        y = "Free Y Scale",
        x = "Date by Year") +
-  theme_tq()
+  theme_tq(base_size = 4)
 ```
 
 ### AAPL: Efficiency Ratios
@@ -162,7 +162,7 @@ AAPL6 %>%
        subtile = "Enjoy",
        y = "Free Scale Y",
        x = "Date by Year") +
-  theme_tq()
+  theme_tq(base_size = 10)
 ```
 
 ### AAPL: Valuation Ratios
@@ -177,6 +177,6 @@ AAPL7 %>%
        subtile = "Enjoy",
        y = "Free Scale Y",
        x = "Date by Year") +
-  theme_tq()
+  theme_tq(base_size = 10)
 ```
 
