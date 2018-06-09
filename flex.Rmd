@@ -2,7 +2,7 @@
 title: "This Guy, Elmore, Made This"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: rows
+    orientation: column
     vertical_layout: fill
 ---
 
@@ -31,7 +31,7 @@ AAPL %>%
        y = "Adjusted Closing Price",
        x = "Date: 2017-2018") +
   theme_tq() +
-  theme(legend.position = "none")
+  theme(legend.position = "left")
 
 ```
 
@@ -40,7 +40,7 @@ Row {.tabset .tabset-fade}
 
 ### AAPL: Volume Chart
 
-```{r}
+```{r, fig.width=10, fig.height=7}
 AAPL <-
   tq_get("AAPL")
 AAPL %>%
@@ -83,7 +83,7 @@ AAPL7 <-
 
 AAPL1 %>%
   ggplot(aes(x = date, y = value)) +
-  facet_wrap(~category, nrow = 4, scales = "free") +
+  facet_wrap(~category, ncol = 5, scales = "free") +
   geom_line() +
   labs(title = "AAPL: Financial Ratios 2008 to 2018",
        subtitle = "Enjoy",
@@ -100,7 +100,7 @@ AAPL1 %>%
 
 AAPL2 %>%
   ggplot(aes(x = date, y = value)) +
-  facet_wrap(~category + sub.section, scales = "free" ) +
+  facet_wrap(~category + sub.section, ncol = 6, scales = "free" ) +
   geom_line() +
   labs(title = "AAPL: Profitability Ratios",
        y = "Free Y Scale",
@@ -114,7 +114,7 @@ AAPL2 %>%
 ```{r}
 AAPL3 %>%
   ggplot(aes(x = date, y = value)) +
-  facet_wrap(~category + sub.section, scales = "free" ) +
+  facet_wrap(~category + sub.section, ncol = 8, scales = "free" ) +
   geom_line() +
   labs(title = "NOC Growth Ratios",
        y = "Free Scale Y",
@@ -142,7 +142,7 @@ AAPL4 %>%
 ```{r}
 AAPL5 %>%
   ggplot(aes(x = date, y = value)) +
-  facet_wrap(~category + sub.section, scales = "free" ) +
+  facet_wrap(~category + sub.section, ncol = 8, scales = "free" ) +
   geom_line() +
   labs(title = "AAPL:Financial Health Ratios",
        y = "Free Y Scale",
