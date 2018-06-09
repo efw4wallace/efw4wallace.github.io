@@ -2,7 +2,7 @@
 title: "This Guy, Elmore, Made This"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
+    orientation: rows
     vertical_layout: fill
 ---
 
@@ -35,7 +35,7 @@ AAPL %>%
 
 ```
 
-Column {data-width=350}
+Row {.tabset .tabset-fade}
 -----------------------------------------------------------------------
 
 ### AAPL: Volume Chart
@@ -94,7 +94,7 @@ AAPL1 %>%
 
 ```
 
-### Another One
+### AAPL: Profitability Ratios
 
 ```{r}
 
