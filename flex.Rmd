@@ -108,3 +108,75 @@ AAPL2 %>%
   theme_tq()
 
 ```
+
+### AAPL: Growth Ratios
+
+```{r}
+AAPL3 %>%
+  ggplot(aes(x = date, y = value)) +
+  facet_wrap(~category + sub.section, scales = "free" ) +
+  geom_line() +
+  labs(title = "NOC Growth Ratios",
+       y = "Free Scale Y",
+       x = "Date by Year") +
+  theme_tq()
+```
+
+### AAPL: Cash Flow Ratios
+
+```{r}
+AAPL4 %>%
+  filter(sub.section == "Cash Flow Ratios") %>%
+  ggplot(aes(x = date, y = value)) +
+  facet_wrap(~category, nrow = 2, scales = "free") +
+  geom_line() +
+  labs(title = "AAPL: Cash Flow Ratios",
+       subtile = "Data From Yahoo Finance",
+       y = "Free Scale Y",
+       x = "Date by Year") +
+  theme_tq()
+```
+
+### AAPL: Financial Health Ratios
+
+```{r}
+AAPL5 %>%
+  ggplot(aes(x = date, y = value)) +
+  facet_wrap(~category + sub.section, scales = "free" ) +
+  geom_line() +
+  labs(title = "AAPL:Financial Health Ratios",
+       y = "Free Y Scale",
+       x = "Date by Year") +
+  theme_tq()
+```
+
+### AAPL: Efficiency Ratios
+
+```{r}
+AAPL6 %>%
+  filter(sub.section == "Efficiency") %>%
+  ggplot(aes(x = value, y = date)) +
+  facet_wrap(~category, nrow = 4, scales = "free") +
+  geom_line() +
+  labs(title = "AAPL: Efficiency Ratios",
+       subtile = "Enjoy",
+       y = "Free Scale Y",
+       x = "Date by Year") +
+  theme_tq()
+```
+
+### AAPL: Valuation Ratios
+
+```{r}
+AAPL7 %>%
+  filter(sub.section == "Valuation Ratios") %>%
+  ggplot(aes(x = date, y = value)) +
+  facet_wrap(~category, nrow = 4, scales = "free") +
+  geom_line() +
+  labs(title = "AAPL: Valuation Ratios",
+       subtile = "Enjoy",
+       y = "Free Scale Y",
+       x = "Date by Year") +
+  theme_tq()
+```
+
