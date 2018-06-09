@@ -12,21 +12,26 @@ library(flexdashboard)
 
 Column {data-width=650}
 -----------------------------------------------------------------------
-
-### AAPL: Stock Daily Closing Price
+### AAPL: Daily Adjusted Closing Price with 10 and 20 day SMA
 
 ```{r}
 library(tidyquant)
 
-
 AAPL <-
-  tq_get("AAPL") 
+  tq_get("AAPL")
 AAPL %>%
-  ggplot(aes(x = date, y = close)) +
-  geom_line() +
-  labs(title = "AAPL: Daily Closing Price", y = "Closing Price", x = "") +
-  theme_bw()
-
+  ggplot(aes(x = date, y = adjusted)) +
+  geom_line() +                         
+  geom_ma(ma_fun = SMA, n = 10, color = "blue") +                 
+  geom_ma(ma_fun = SMA, n = 50, color = "red") + 
+  coord_x_date(xlim = c(today() - weeks(45), today()),
+               ylim = c(140,195)) +
+  labs(title = "AAPL: Stock Price with 10 and 20 day Moving average",
+       subtitle = "Data From Yahoo Finance",
+       y = "Adjusted Closing Price",
+       x = "Date: 2017-2018") +
+  theme_tq() +
+  theme(legend.position = "none")
 
 ```
 
@@ -36,6 +41,8 @@ Column {data-width=350}
 ### AAPL: Volume Chart
 
 ```{r}
+AAPL <-
+  tq_get("AAPL")
 AAPL %>%
   ggplot(aes(x = date, y = volume)) +
   geom_segment(aes(xend = date, yend = 0, color = volume)) +
@@ -83,6 +90,7 @@ AAPL1 %>%
        y = "Free Y Scale",
        x = "Date by Year") +
   theme_tq()
+
 
 ```
 
