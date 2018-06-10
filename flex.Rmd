@@ -54,6 +54,8 @@ AAPL %>%
   theme(legend.position = "none")
 ```
 
+-----------------------------------------------------------------------
+
 ### AAPL: Key Financial Ratios
 
 ```{r}
