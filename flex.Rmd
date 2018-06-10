@@ -180,3 +180,19 @@ AAPL7 %>%
   theme_tq(base_size = 10)
 ```
 
+### AAPL Stock Price with MACD
+
+```{r}
+library(quantmod)
+getSymbols("AAPL", src = "yahoo")
+chartSeries(AAPL,
+            subset = NULL,
+            show.grid = TRUE,
+            time.scale = NULL,
+            log.scale = FALSE,
+            bar.type = "ohlc")
+  addSMA(n = 50, on = 1, overlay = TRUE, col = "blue")
+  addSMA(n = 20, on = 1, overlay = TRUE, col = "pink")
+  addMACD(fast = 12, slow = 26, signal = 9)
+  addRSI(n = 14, maType = "EMA", wilder = TRUE)
+```  
