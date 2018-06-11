@@ -118,7 +118,7 @@ AAPL3 %>%
   ggplot(aes(x = date, y = value)) +
   facet_wrap(~category + sub.section, ncol = 6, scales = "free" ) +
   geom_line() +
-  labs(title = "NOC Growth Ratios",
+  labs(title = "AAPL: Growth Ratios",
        y = "Free Scale Y",
        x = "Date by Year") +
   theme_tq(base_size = 5)
@@ -182,19 +182,28 @@ AAPL7 %>%
   theme_tq(base_size = 10)
 ```
 
-### AAPL Stock Price with MACD
+### AAPL: Stock Price with MACD
 
 ```{r}
 library(quantmod)
 getSymbols("AAPL", src = "yahoo")
 chartSeries(AAPL,
-            subset = NULL,
+            subset = '2017-12::2018',
             show.grid = TRUE,
             time.scale = NULL,
             log.scale = FALSE,
             bar.type = "ohlc")
   addSMA(n = 50, on = 1, overlay = TRUE, col = "blue")
-  addSMA(n = 20, on = 1, overlay = TRUE, col = "pink")
+  addSMA(n = 20, on = 1, overlay = TRUE, col = "red")
   addMACD(fast = 12, slow = 26, signal = 9)
   addRSI(n = 14, maType = "EMA", wilder = TRUE)
 ```  
+
+### AAPL: Candlestick + BBands + CCI
+
+```{r}
+chartSeries(AAPL, theme = 'white', subset = '2017-12::2018')
+  addBBands()
+  addCCI()
+```
+
