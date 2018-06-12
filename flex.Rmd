@@ -102,6 +102,7 @@ AAPL1 %>%
 ```{r}
 
 AAPL2 %>%
+  # filter(category %in% c("fish", "bob"), sub.section %in% c())
   ggplot(aes(x = date, y = value)) +
   facet_wrap(~category + sub.section, ncol = 6, scales = "free" ) +
   geom_line() +
@@ -207,9 +208,11 @@ addRSI(n = 14, maType = "EMA", wilder = TRUE)
 
 ### AAPL: Candlestick + BBands + CCI
 
-```{r}
+```{r, eval=TRUE, include=FALSE}
 chartSeries(AAPL, theme = 'white', subset = '2017-12::2018')
   addBBands()
-  addCCI()
 ```
 
+```{r}
+addCCI()
+```
