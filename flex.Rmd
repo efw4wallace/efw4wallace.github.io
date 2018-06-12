@@ -26,6 +26,7 @@ AAPL %>%
   geom_ma(ma_fun = SMA, n = 50, color = "red") + 
   coord_x_date(xlim = c(today() - weeks(45), today()),
                ylim = c(140,195)) +
+  scale_y_continuous(breaks = c(145, 155, 165, 175, 185, 195, 205)) +
   labs(title = "AAPL: Stock Price with 10 and 20 day Moving average",
        subtitle = "Data From Yahoo Finance",
        y = "Adjusted Closing Price",
@@ -184,7 +185,7 @@ AAPL7 %>%
 
 ### AAPL: Stock Price with MACD
 
-```{r}
+```{r, eval=TRUE, include=FALSE}
 library(quantmod)
 getSymbols("AAPL", src = "yahoo")
 chartSeries(AAPL,
@@ -196,8 +197,13 @@ chartSeries(AAPL,
   addSMA(n = 50, on = 1, overlay = TRUE, col = "blue")
   addSMA(n = 20, on = 1, overlay = TRUE, col = "red")
   addMACD(fast = 12, slow = 26, signal = 9)
-  addRSI(n = 14, maType = "EMA", wilder = TRUE)
 ```  
+
+
+```{r}
+addRSI(n = 14, maType = "EMA", wilder = TRUE)
+```
+
 
 ### AAPL: Candlestick + BBands + CCI
 
