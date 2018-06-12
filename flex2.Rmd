@@ -1,0 +1,114 @@
+---
+title: "Test Flex Two"
+author: "Elmore Wallace"
+output: flexdashboard::flex_dashboard
+---
+
+
+```{r,message=FALSE,warning=FALSE,echo=FALSE}
+
+
+```
+
+
+Parent Quartile Grouping {.storyboard}
+=========================================
+
+### **A: LAZ Trajectories** using Mother & Father Height Quartiles  {data-commentary-width=200}
+
+```{r,fig.width=10,fig.height=7}
+
+plot(1:100)
+
+```
+
+*** 
+
+**Summary**   
+   
+* We examined different percentile binning for Mother and Father heights.  Of the three percentile groupings we examined, the quartile divisions provided the optimal uncertainty reduction in LAZ at 24 months.   
+* Children were grouped based on the interaction of their parent's quartile heights.  Thus children were put into 16 groups as shown in the plot.
+   
+**Observations**   
+   
+* Mother is the most productivie of the two parents in reducing uncertainty of LAZ at 24 months.
+* Having a Father that is above the 75th percentile also helps group children.
+ 
+
+### **B: 24 Month Distribution** using Mother & Father Height Quartiles {data-commentary-width=200}
+
+```{r,fig.width=10,fig.height=7}
+
+plot(1:100)
+
+```
+
+*** 
+
+**Summary**   
+   
+* 
+   
+**Observations**   
+   
+* 
+ 
+
+### **C: LAZ Trajectories with LAZ Groupings** using Mother & Father Height Quartiles  {data-commentary-width=200}
+
+```{r,fig.width=10,fig.height=7}
+
+plot(1:100)
+
+```
+
+*** 
+
+**Summary**   
+   
+* 
+   
+**Observations**   
+   
+* 
+
+
+### **D: 24 Month Distribution with LAZ Groupings** using Mother & Father Height Quartiles {data-commentary-width=200}
+
+```{r,fig.width=10,fig.height=8}
+
+plot(1:100)
+
+```
+
+*** 
+
+**Summary**   
+   
+* 
+   
+**Observations**   
+   
+* 
+
+
+
+Birth Weight Change Grouping {.storyboard}
+=========================================
+
+### Frame 1
+
+```{r,fig.width=10,fig.height=7}
+
+
+```
+
+*** 
+
+Some commentary about Frame 1.
+
+
+Diarrhea Count Grouping {.storyboard}
+=========================================
+
+
