@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Equity Research
 
 - [Apple Equity Report Graphics](flex.html)
-- [my second link](flex2.html)
+- [Apple Equity Report Two](flex2.html)
 
 ---
 
