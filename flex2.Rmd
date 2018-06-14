@@ -92,7 +92,7 @@ addCCI()
 * 
 
 
-### **D: 24 Month Distribution with LAZ Groupings** using Mother & Father Height Quartiles {data-commentary-width=200}
+### **AAPL: Look at Dis Graph** I makes anoder won {data-commentary-width=200}
 
 ```{r,fig.width=10,fig.height=8}
 
@@ -203,7 +203,7 @@ AAPL4 %>%
   theme_tq(base_size = 8)
 ```
 
-### AAPL: Financial Health Ratios
+### Financial Health Ratios
 
 ```{r, eval = TRUE}
 AAPL5 %>%
@@ -216,7 +216,7 @@ AAPL5 %>%
   theme_tq(base_size = 4)
 ```
 
-### AAPL: Efficiency Ratios
+### Efficiency Ratios
 
 ```{r,fig.width=12,fig.height=7, eval = TRUE}
 AAPL6 %>%
@@ -231,7 +231,7 @@ AAPL6 %>%
   theme_tq(base_size = 10)
 ```
 
-### AAPL: Valuation Ratios
+### Valuation Ratios
 
 ```{r,fig.width=12,fig.height=7, eval = TRUE}
 AAPL7 %>%
@@ -247,7 +247,15 @@ AAPL7 %>%
 ```
 
 
-Diarrhea Count Grouping {.storyboard}
+Data Tables {.storyboard}
 =========================================
 
+### Stock Price data
+
+```{r, fig.width=12, fig.height=7, eval = TRUE}
+
+library(DT)
+datatable(AAPL, options = list(pageLength = 5))
+
+```
 
