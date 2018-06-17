@@ -117,7 +117,7 @@ AAPL: Key Financial Ratios {.storyboard}
 
 ### Financial Ratios
 
-```{r,fig.width=12,fig.height=7, eval = TRUE}
+```{r,fig.width=12,fig.height=5, eval = TRUE}
 
 library(tidyquant)
 AAPLFinancial <-
@@ -152,7 +152,7 @@ AAPL1 %>%
        subtitle = "Enjoy",
        y = "Free Y Scale",
        x = "Date by Year") +
-  theme_tq(base_size = 2, base_family = "")
+  theme_tq(base_size = 6, base_family = "")
 
 ```
 
@@ -162,35 +162,35 @@ Some commentary about Frame 1.
 
 ### Profitability Ratios
 
-```{r,fig.width=12,fig.height=7, eval = TRUE}
+```{r,fig.width=12,fig.height=5, eval = TRUE}
 AAPL2 %>%
   # filter(category %in% c("fish", "bob"), sub.section %in% c())
   ggplot(aes(x = date, y = value)) +
-  facet_wrap(~category + sub.section, ncol = 6, scales = "free" ) +
+  facet_wrap(~category + sub.section, ncol = 5, scales = "free" ) +
   geom_line() +
   labs(title = "AAPL: Profitability Ratios",
        y = "Free Y Scale",
        x = "Date by Year") +
-  theme_tq(base_size = 2)
+  theme_tq(base_size = 6)
 
 ```
 
 ### Growth Ratios
 
-```{r,fig.width=12,fig.height=7, eval = TRUE}
+```{r,fig.width=12,fig.height=5, eval = TRUE}
 AAPL3 %>%
   ggplot(aes(x = date, y = value)) +
-  facet_wrap(~category + sub.section, ncol = 6, scales = "free" ) +
+  facet_wrap(~category + sub.section, ncol = 5, scales = "free" ) +
   geom_line() +
   labs(title = "AAPL: Growth Ratios",
        y = "Free Scale Y",
        x = "Date by Year") +
-  theme_tq(base_size = 5)
+  theme_tq(base_size = 6)
 ```
 
 ### Cash Flow Ratios
 
-```{r,fig.width=12,fig.height=7, eval = TRUE}
+```{r,fig.width=12,fig.height=5, eval = TRUE}
 AAPL4 %>%
   filter(sub.section == "Cash Flow Ratios") %>%
   ggplot(aes(x = date, y = value)) +
@@ -205,7 +205,7 @@ AAPL4 %>%
 
 ### Financial Health Ratios
 
-```{r, eval = TRUE}
+```{r,fig.width=24,fig.height=10, eval = TRUE}
 AAPL5 %>%
   ggplot(aes(x = date, y = value)) +
   facet_wrap(~category + sub.section, nrow = 5, scales = "free" ) +
@@ -213,12 +213,12 @@ AAPL5 %>%
   labs(title = "AAPL:Financial Health Ratios",
        y = "Free Y Scale",
        x = "Date by Year") +
-  theme_tq(base_size = 4)
+  theme_tq(base_size = 7)
 ```
 
 ### Efficiency Ratios
 
-```{r,fig.width=12,fig.height=7, eval = TRUE}
+```{r,fig.width=12,fig.height=5, eval = TRUE}
 AAPL6 %>%
   filter(sub.section == "Efficiency") %>%
   ggplot(aes(x = value, y = date)) +
@@ -233,7 +233,7 @@ AAPL6 %>%
 
 ### Valuation Ratios
 
-```{r,fig.width=12,fig.height=7, eval = TRUE}
+```{r,fig.width=12,fig.height=5, eval = TRUE}
 AAPL7 %>%
   filter(sub.section == "Valuation Ratios") %>%
   ggplot(aes(x = date, y = value)) +
@@ -258,4 +258,3 @@ library(DT)
 datatable(AAPL, options = list(pageLength = 5))
 
 ```
-
