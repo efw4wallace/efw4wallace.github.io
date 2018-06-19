@@ -258,3 +258,114 @@ library(DT)
 datatable(AAPL, options = list(pageLength = 5))
 
 ```
+
+Economic Data {.storyboard}
+=========================================
+
+### Consumer Price Index
+```{r, fig.width=12, fig.height=7, eval = TRUE}
+CPI <-
+  tq_get(x = c("CPIAUCSL"),
+         get = "economic.data", 
+         from = "2000-01-01", 
+         to = "2018-01-01")
+
+CPI %>%
+  ggplot(aes(x = date, y = price)) +
+  geom_line(color = "blue", size = 1) +
+  labs(title = "Consumer Price Index for All Urban Consumers: All Items (CPIAUCSL)",
+       subtitle = "Index 1982 - 1984 = 100 | Monthly",
+       y = "Index 1982 - 1984 = 100",
+       x = "Source: U.S. Bureau of Labor Statistics via FRED") +
+  theme_tq()
+```
+
+### Real Gross Domestic Product
+```{r, fig.width=12, fig.height=7, eval = TRUE}
+RGDP <-
+  tq_get(x = c("GDPC1"),
+         get = "economic.data",
+         from = "2000-01-01",
+         to = "2018-01-01")
+
+RGDP %>%
+  ggplot(aes(x = date, y = price)) +
+  geom_line(color = "blue", size = 2) +
+  labs(title = "Real Gross Domestic Product (GDPC1)",
+       subtitle = "Billions of Chained 2009 Dollars, Quarterly",
+       y = "Billions of Chained 2009 Dollars",
+       x = "Source: US Bureau of Economic Analysis via FRED") +
+  theme_tq()
+```
+
+### Civilian Unemployment Rate
+```{r, fig.width=12, fig.height=7, eval = TRUE}
+UnEmploy <- 
+  tq_get(x = c("UNRATE"), 
+         get = "economic.data",
+         from = "2000-01-01",
+         to = "2018-01-01")
+
+UnEmploy %>%
+  ggplot(aes(x = date, y = price)) +
+  geom_line(color = "blue", size = 1) +
+  labs(title = "Civilian Unemployment Rate (UNRATE)",
+       subtitle = "Percent | Monthly",
+       x = "Source: U.S. Bureau of Labor Statistics via FRED",
+       y = "Percent") +
+  theme_tq()
+```
+
+### Industrial Production Index
+```{r, fig.width=12, fig.height=7, eval = TRUE}
+IndustrialProduction <-
+  tq_get(x = c("INDPRO"),
+         get = "economic.data",
+         from = "2000-01-01",
+         to = "2018-01-01")
+
+IndustrialProduction %>%
+  ggplot(aes(x = date, y = price)) +
+  geom_line(color = "blue", size = 1) +
+  labs(title = "Industrial Production Index",
+       subtitle = "Index 2012 = 100 | Monthly",
+       x = "Source: Board of Governors of the Federal Reserve System (US) via FRED",
+       y = "Index 2012 = 100") +
+  theme_tq()
+```
+
+### Nonfarm Payrolls
+```{r, fig.width=12, fig.height=7, eval = TRUE}
+Nonfarm <-
+  tq_get(x = c("PAYEMS"),
+         get = "economic.data",
+         from = "2000-01-01",
+         to = "2018-01-01")
+
+Nonfarm %>%
+  ggplot(aes(x = date, y = price)) +
+  geom_line(color = "blue", size = 1) +
+  labs(title = "All Employees: Total Nonfarm Payrolls (PAYEMS)",
+       subtitle = "Thousands of Persons | Monthly",
+       y = "Thousands of Persons",
+       x = "Source: U.S. Bureau of Labor Statistics via FRED") +
+  theme_tq()
+```
+
+### Federal Funds Rate
+```{r, fig.width=12, fig.height=7, eval = TRUE}
+FF <-
+  tq_get(x = c("FEDFUNDS"),
+         get = "economic.data",
+         from = "2000-01-01",
+         to = "2018-01-01")
+
+FF %>%
+  ggplot(aes(x = date, y = price)) +
+  geom_line(color = "blue", size = 1) +
+  labs(title = "Effective Federal Funds Rate (FEDFUNDS)",
+       subtitle = "Percent | Monthly",
+       y = "Percent",
+       x = "Source: Board of Governors of the Federal Reserve System via FRED") +
+  theme_tq()
+```
