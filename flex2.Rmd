@@ -41,13 +41,14 @@ addRSI(n = 14, maType = "EMA", wilder = TRUE)
 
 **Summary**   
    
-* Let me tell you some stuff about AAPL.   
-* It may be overpriced, but is trending very strong, especailly after the last few months.
+* Add: Consumer Electronics Index   
+* Add: S&P 500
+* Add: Returns table + Dividend Yield + Market Cap
    
 **Observations**   
    
-* Would Recommend something else.
-* It's applie.
+* Add: Trailing Total Returns.
+* Add: Total Retun (%) 
  
 
 ### **AAPL: Another Graphic** Candle stick + BBands + CCI {data-commentary-width=200}
@@ -119,13 +120,12 @@ dygraph(Xts, main = "One Year of AAPL Adjusted Stock Price Data") %>%
 
 **Summary**   
    
-* 
+* A:
+* B:
+* C:
+* D:
+* E:
    
-**Observations**   
-   
-* 
-
-
 ### **AAPL: Look at Dis Graph** I makes anoder won {data-commentary-width=200}
 
 ```{r,fig.width=10,fig.height=8}
@@ -192,7 +192,9 @@ AAPL1 %>%
 
 *** 
 
-Some commentary about Frame 1.
+* Add: Valuation History Compared to S&P 500
+* Price/Earnings, Price/Book, Price/Sales, Price/Cash Flow
+* Add: Yields; Earnings, Dividend, Cash, S&P 500 Earnings, T-bond yield
 
 ### Profitability Ratios
 
