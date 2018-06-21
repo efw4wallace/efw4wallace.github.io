@@ -73,6 +73,7 @@ addCCI()
 * A Bollinger Band plots two standard deviations away from a simple moving average as a measure of volatility. When the market becomes more volatile, the bands become wider and contract durring less volatile periods.
 * Squeezes: When the bands come close together, it is called a squeeze. This signals a period of low volatility and can be considered as a signal for potential trading opportunities.
 * Breakouts: About 90% of price movements take place between the two Bollinger Bands. Any breakout above or below the band is a major event in the stock price movement. These are not sell or buy signals, however, as they do not indicate any directional movements for future price.
+* The Commodity Channel Index (CCI) is a stochastic oscillator that measures the change in an instrument's price relative to a pre-defined moving average of the price divided by 1.5 percent of a normal deviation from that average. As a technical trading tool used most often to help determine when an investment vehicle is reaching a condition of being oversold or overbought.
 
 ### **AAPL: One Year Adjusted Stock Price** Interactive Graphic  {data-commentary-width=200}
 
@@ -125,7 +126,7 @@ dygraph(Xts, main = "One Year of AAPL Adjusted Stock Price Data") %>%
 * D:
 * E:
    
-### **Test plot** Test plot {data-commentary-width=200}
+### **Apple vs Microsoft** Interactive Graphic {data-commentary-width=200}
 
 ```{r, eval=TRUE, include=FALSE, fig.width=10,fig.height=7}
 
