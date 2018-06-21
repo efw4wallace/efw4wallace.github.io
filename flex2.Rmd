@@ -44,6 +44,8 @@ addRSI(n = 14, maType = "EMA", wilder = TRUE)
 * Add: Consumer Electronics Index   
 * Add: S&P 500
 * Add: Returns table + Dividend Yield + Market Cap
+* MACD is short for moving average convergence/divergence. A trading indicator used in technical analysis, is supposed to reveal changes in the strength, direction, momentum, and duration of trending stock price movements.
+* The relative strength index (RSI) is a momentum indicator that compares the magnitude of recent gains and losses over a period of time. It measures speed and directional changes of price movements of a financial security - identifing overbought or oversold conditions.
    
 **Observations**   
    
@@ -68,12 +70,9 @@ addCCI()
 
 **Summary**   
    
-* You like this?
-   
-**Observations**   
-   
-* Things have been observed
- 
+* A Bollinger Band plots two standard deviations away from a simple moving average as a measure of volatility. When the market becomes more volatile, the bands become wider and contract durring less volatile periods.
+* Squeezes: When the bands come close together, it is called a squeeze. This signals a period of low volatility and can be considered as a signal for potential trading opportunities.
+* Breakouts: About 90% of price movements take place between the two Bollinger Bands. Any breakout above or below the band is a major event in the stock price movement. These are not sell or buy signals, however, as they do not indicate any directional movements for future price.
 
 ### **AAPL: One Year Adjusted Stock Price** Interactive Graphic  {data-commentary-width=200}
 
@@ -126,7 +125,7 @@ dygraph(Xts, main = "One Year of AAPL Adjusted Stock Price Data") %>%
 * D:
 * E:
    
-### **AAPL: Look at Dis Graph** I makes anoder won {data-commentary-width=200}
+### **Test plot** Test plot {data-commentary-width=200}
 
 ```{r,fig.width=10,fig.height=8}
 
