@@ -127,11 +127,33 @@ dygraph(Xts, main = "One Year of AAPL Adjusted Stock Price Data") %>%
    
 ### **Test plot** Test plot {data-commentary-width=200}
 
-```{r,fig.width=10,fig.height=8}
+```{r, eval=TRUE, include=FALSE, fig.width=10,fig.height=7}
 
-plot(1:100)
+library(dygraphs)
+library(quantmod)
+library(tidyquant)
 
+
+tickers <- c("AAPL", "MSFT")
+getSymbols(tickers)
+closePrices <- do.call(merge, lapply(tickers, function(x) Cl(get(x))))
+dateWindow <- c("2008-01-01", "2009-01-01")
+
+dygraph(closePrices, main = "Value", group = "stock") %>%
+  dyRebase(value = 100) %>%
+  dyRangeSelector(dateWindow = dateWindow)
+
+dygraph(closePrices, main = "Percent", group = "stock") %>%
+  dyRebase(percent = TRUE) %>%
+  dyRangeSelector(dateWindow = dateWindow)
+  
 ```
+
+```{r}
+dygraph(closePrices, main = "None", group = "stock") %>%
+  dyRangeSelector(dateWindow = dateWindow)
+```
+
 
 *** 
 
